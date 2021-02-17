@@ -15,7 +15,7 @@
 4.  Start Chainweb node:
 
     ```sh
-    docker run -d -P -v chainweb-data:/data kadena/chainweb-node
+    docker run -d -p 1789:1789 -p 1848:1848 -v chainweb-data:/data kadena/chainweb-node
     ```
 
 For explanations and additional configuration options (like, for instance, using
