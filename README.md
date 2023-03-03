@@ -98,7 +98,7 @@ remote location or a local file. Any URL that curl understands is fine.
 
 Database snapshots are available from different sources. Kadena offers an
 up-to-date snapshot at
-https://kadena-node-db.s3.us-east-2.amazonaws.com/db-chainweb-node-ubuntu.18.04-latest.tar.gz.
+https://kadena-node-db.s3.us-east-2.amazonaws.com/db-chainweb-node-mainnet-latest.tar.gz .
 This file is stored in a request-pays S3 bucket. In order to access it you need
 an AWS account and you must create and signed URL for authenticating with S3.
 Details about how to do this can be found here:
@@ -117,7 +117,7 @@ const s3 = new AWS.S3({
 const params = {
   Bucket: 'kadena-node-db',
   Expires: 3600,
-  Key: 'db-chainweb-node-ubuntu.18.04-latest.tar.gz',
+  Key: 'db-chainweb-node-mainnet-latest.tar.gz',
   RequestPayer: 'requester'
 }
 // When ran, the script will output exclusively the signed url
@@ -133,7 +133,7 @@ url  = client.generate_presigned_url(
     "get_object",
     Params = {
         "Bucket":"kadena-node-db",
-        "Key":"db-chainweb-node-ubuntu.18.04-latest.tar.gz",
+        "Key":"db-chainweb-node-mainnet-latest.tar.gz",
         "RequestPayer":'requester'
     }
 )
